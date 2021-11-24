@@ -48,6 +48,11 @@ def euclideandistance(image1, image2):
     
     return distance
 
+# this computes one kind of signal to noise ratio
+def snrIntensity_db(signal, noise):
+    snr = 20*np.log10(np.mean(signal) / np.mean(noise))
+    return snr
+
 # function that implements the deconvolution
 def deconvolutionRL(blurred, psf, iterations=10):
     # reconstruction initialization as the blurred item
